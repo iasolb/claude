@@ -1,28 +1,50 @@
 # Global instructions
 
 ## Who I am
-Marketing Analyst at Wayfair. Day-to-day work happens in JupyterLab running on a
-GCP Vertex AI Workbench VM (browser-based, not a local install), no conda, just
-pip + pyenv. Primary data source is BigQuery (GBQ). Work is read/analysis-heavy:
-pulling data, validating it, and building cleaners/analysis scripts, not writing
-back to source tables.
-
-B.A. in Data Science and Economics at Northeastern (co-op program, graduating
-2027), currently on a co-op as Marketing Analyst at Wayfair and looking for a
+B.A. Data Science and Economics at Northeastern (co-op program, graduating 2027).
+Currently on co-op as Marketing Analyst at Wayfair: day-to-day work happens in
+JupyterLab running on a GCP Vertex AI Workbench VM (browser-based, not a local
+install), no conda, just pip + pyenv. Primary data source is BigQuery (GBQ).
+Work is read/analysis-heavy: pulling data, validating it, and building
+cleaners/analysis scripts, not writing back to source tables. Looking for a
 fall 2026 co-op next, ideally somewhere data infrastructure drives supply
 chain, finance, or operations decisions. Previously interned as a research
-software engineer with Dartmouth College's Research Computing team.
+software engineer with Dartmouth College's Research Computing team (2024,
+now archived).
+
+Undergraduate researcher in Northeastern's Loth Lab on the BRAIN project
+(Biomechanical Report: Analysis and Imaging at Northeastern), studying Chiari
+malformation: built an interactive Holoviz Panel dashboard over patient
+morphometric data, deployed on Hugging Face Spaces via Docker.
+
+Active side projects, roughly in order of how often they come up:
+- **Edgewater Farm**: migrating a legacy Access DB to MySQL and building a
+  progressive web app on top (FastAPI + SQLAlchemy + HTMX/Tailwind), so farm
+  employees get a usable mobile interface instead of raw database access.
+  Two audiences, deliberately different UX: employee capture flows
+  (plant/harvest/sell) are dead-simple and mobile-first; admin flows are
+  denser and desktop-oriented.
+- **FinancialEdgeConnector** (TallPoppies, built with Stephen Solberg): a
+  small Flask app giving a school's faculty a Google-authed view into
+  Financial Edge NXT (Blackbaud Sky API) budget data, deployed on a
+  free-tier Oracle Cloud VM. Deliberately lightweight since the school's own
+  IT team has to run it, not a product.
+- **SolbergMainframe**: early-stage Django family app, a "where is our stuff
+  stored" inventory tracker plus a LEGO catalog and project/task tracker.
+- **FRED_Loader / Census_Loader / ResearchFramework**: a family of personal
+  research tools. FRED_Loader and Census_Loader are human-readable naming
+  layers over government data APIs; ResearchFramework is a Monte Carlo/
+  statistical modeling framework built on top of that data. Feeds a genuine
+  interest in distributional macroeconomics (how wealth concentration affects
+  consumption, investment, and monetary policy transmission), not just a
+  resume line.
 
 Big into API development and automation: a recurring pattern across personal
 projects (github.com/iasolb) is writing clean abstraction layers over raw
-government-data APIs (FRED, Census) so other people can pull data through a
-human-readable interface instead of learning the underlying API's quirks. Same
-instinct shows up outside pure APIs too: currently migrating Edgewater Farm off
-a legacy AccessDB onto MySQL and building a progressive web app on top so
-non-technical users get a usable interface instead of raw database access
-(work in progress, private repo). Building things that make analysis or data
-access easier for other people is a real motivator, not just solving one-off
-problems.
+APIs, government data or otherwise, so other people can pull data through a
+human-readable interface instead of learning the underlying API's quirks.
+Building things that make analysis or data access easier for other people is
+a real motivator, not just solving one-off problems.
 
 ## Tooling defaults
 - For representing a SQL/GBQ table in Python, default to a `pandera.DataFrameModel`
@@ -55,6 +77,10 @@ problems.
 - Keep code answers short with a one-line "why" only when something is
   non-obvious (e.g. why a plain `__repr__` won't fire on a class that's never
   instantiated). Skip explaining what the code obviously does.
+- Default to implementing things directly rather than only explaining/guiding,
+  unless a specific project says otherwise (some projects, like
+  FinancialEdgeConnector, are explicitly hand-hold-only, that's a project-level
+  exception documented in that project's own memory, not the global default).
 
 ## Rules
 Standing rules live one-per-topic in `rules/`. Imported here so they're always
@@ -62,3 +88,6 @@ loaded, not just discoverable.
 
 @rules/git-github.md
 @rules/style.md
+@rules/documentation.md
+@rules/dev-practices.md
+@rules/planning-mode.md

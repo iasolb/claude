@@ -1,11 +1,12 @@
 # Symlinks this repo's tracked config into ~/.claude.
-# Run from this directory. Existing targets are backed up with a .bak suffix
-# before being replaced, never silently overwritten.
+# Run from anywhere; resolves paths relative to this script's location.
+# Existing targets are backed up with a .bak suffix before being replaced,
+# never silently overwritten.
 
-$repoRoot = $PSScriptRoot
+$repoRoot = Split-Path -Parent $PSScriptRoot
 $claudeDir = Join-Path $env:USERPROFILE ".claude"
 
-$items = @("CLAUDE.md", "settings.json", "commands", "agents")
+$items = @("CLAUDE.md", "settings.json", "commands", "agents", "rules", "hooks")
 
 foreach ($item in $items) {
     $source = Join-Path $repoRoot $item
