@@ -22,6 +22,10 @@ foreach ($item in $items) {
         }
     }
 
-    New-Item -ItemType SymbolicLink -Path $target -Target $source -Force | Out-Null
-    Write-Host "Linked $item"
+    try {
+        New-Item -ItemType SymbolicLink -Path $target -Target $source -Force -ErrorAction Stop | Out-Null
+        Write-Host "Linked $item"
+    } catch {
+        Write-Host "FAILED to link $item : $($_.Exception.Message)" -ForegroundColor Red
+    }
 }
