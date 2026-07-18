@@ -30,15 +30,16 @@ foreach ($item in $items) {
     }
 }
 
-# Cross-machine session memory: link the home-dir project's memory dir to the
+# Cross-machine session memory: link the current project's memory dir to the
 # repo's memory/ so memories written on either machine sync through git.
-# Claude Code derives the project key from the home path by swapping path
-# separators (and the drive colon) for dashes (C:\Users\Ian -> C--Users-Ian).
-# If memories don't appear on this machine, verify the actual key by checking
-# the folder name Claude Code created under ~/.claude/projects for a home-dir
-# session, then re-run.
+# Claude Code derives the project key from the session's actual working
+# directory by swapping path separators (and the drive colon) for dashes
+# (C:\Users\Ian -> C--Users-Ian, bare C:\ -> C--). That's NOT always the home
+# dir: a session launched with cwd C:\ gets project key "C--", not
+# "C--Users-Ian". So run this script from whatever directory you actually
+# launch `claude` from on this machine, and re-run it if that changes.
 $memorySource = Join-Path $repoRoot "memory"
-$projectKey = $env:USERPROFILE -replace '[:\\/]', '-'
+$projectKey = (Get-Location).Path -replace '[:\\/]', '-'
 $memoryTarget = Join-Path $claudeDir "projects\$projectKey\memory"
 
 New-Item -ItemType Directory -Path (Split-Path -Parent $memoryTarget) -Force | Out-Null

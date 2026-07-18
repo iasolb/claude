@@ -1,14 +1,42 @@
 ---
 name: pc-layout
-description: Layout of Ian's Windows PC (stub, fill in from a session on that machine)
+description: Layout of Ian's Windows PC, profiled 2026-07-18; also documents a project-key gotcha specific to this machine
 metadata:
   type: project
 ---
 
-Stub as of 2026-07-18. Ian's secondary machine is a Windows PC with a larger
-hard drive than the MacBook; it's the archive target for bulky files moved
-off the Mac (see [[mainframe-layout]]). Layout not yet explored: from the
-first session on that machine, walk the filesystem the way the MacBook was
-profiled and replace this stub with the real map. Also verify the installer's
-guessed project key (windows.ps1 derives it from USERPROFILE) actually
-matches the folder under ~/.claude/projects.
+Profiled 2026-07-18 (first real session on this machine). Home dir is
+`C:\Users\ians0`. Project layout lives under `Documents/mf/`:
+
+- `mf/work/tallpoppies/FinancialEdgeConnector` — live repo (`.git`, `.venv`,
+  `.env` all present). See [[financialedge-brain-state]].
+- `mf/work/edgewater` — empty as of this session. Ian is about to sync
+  Edgewater (`EdgewaterDB` on the Mac, see [[edgewater-state]]) onto this
+  machine and work on it here too. Check whether it's populated before
+  assuming this is still empty.
+- `mf/personal/projects/code` — only a `leet/` folder (LeetCode practice
+  scripts) so far. FRED_Loader/Census_Loader/ResearchFramework/
+  SolbergMainframe (see [[research-tools-state]], [[solbergmainframe-state]])
+  are NOT on this machine yet.
+- `mf/school`, `mf/personal/training` — empty, left as placeholders
+  intentionally (Ian's call, not stale).
+- `mf/personal/notes` — actively used (journal, reference links).
+
+General PC cleanup done this session: removed stale/duplicate installers and
+zips from Downloads, removed Postman (installer + leftover home-dir folder,
+per the no-Postman rule), moved Assetto Corsa mod archives from Desktop into
+`Documents/Assetto Corsa Archives`, deleted a redundant
+`FinancialEdgeConnector.zip` that duplicated the live repo. Per
+[[mainframe-layout]], this machine (bigger drive) is also the intended
+landing spot for the Mac's `_transfer_to_pc` staging folder — not yet
+received here as of this session.
+
+**Project-key gotcha (fixed 2026-07-18):** `install/windows.ps1` originally
+derived the memory-sync project key from `$env:USERPROFILE`
+(`C--Users-ians0`), but this session's actual Claude Code project key was
+`C--`, because the session's working directory was bare `C:\`, not the home
+dir. Sessions on this machine apparently don't default to launching with cwd
+= home dir the way the Mac install assumed. Fixed the script to derive the
+key from the actual invocation directory (`Get-Location`) instead — run it
+from whatever directory `claude` sessions actually launch from here, and
+re-run if that changes. See [[memory-bank-ownership]].
