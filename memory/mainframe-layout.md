@@ -7,19 +7,25 @@ metadata:
   originSessionId: 91d37473-1098-4651-8d05-5a2d210ae14c
 ---
 
-All code on this machine lives under `~/Desktop/MAINFRAME/`:
+All code on this machine lives under `~/Desktop/MAINFRAME/`. Reorganized
+2026-07-18 (stale backups, redownloadable bloat, and duplicate zips deleted;
+superseded code zipped to `backups/superseded-code-2026-07.zip`):
 
 - `Personal/Code/`: FRED_Loader, ResearchFramework, FRED_DebtAnalysis,
   CensusTestingEnv (vendored copy of Census_Loader), SolbergMainframe,
-  LeetCode, canvas_scrape, demo-code, C_start (empty).
-- `Work/Edgewater/`: EdgewaterDB is the active repo, see
-  [[edgewater-state]]. Siblings (edgewater_attempt1, edgewater_api_cleanup,
-  top-level EdgewaterMasterCleaner) are superseded.
-- `Work/TallPoppies/`: FinancialEdgeConnector (deployed), blackbaud (scratch).
-- `Work/Dartmouth/`: all archived 2024-2025 internship work.
+  LeetCode, canvas_scrape.
+- `Work/Edgewater/`: EdgewaterDB (active repo, see [[edgewater-state]]) plus
+  reference/ and schema/. Old attempts live only in the superseded-code zip.
+- `Work/TallPoppies/`: FinancialEdgeConnector (deployed).
 - `Work/Wayfair/`: empty, that work lives on the GCP Vertex AI VM only.
-- `School/labs+research/`: BRAIN/Chiari dashboard, see [[brain-dashboard-state]].
-- Also present: Music (Ableton beat library), Personal-Obsidian, backups.
+- `School/labs+research/Chiari Malformation/`: BRAIN is the live deployed
+  dashboard repo (GitHub + HF Spaces remotes); its predecessor Chiari
+  Dataview is in the superseded-code zip. See [[financialedge-brain-state]].
+- `SAMPLE CORE (Refurbished)/` and `Music/`: Ableton production material,
+  stays on this machine, see [[mac-ableton-production]].
+- `_transfer_to_pc/` (~12G): staged for shipment to the PC's big drive, then
+  deletion here: mp3dump beat-pack zips, 2025-03-05 screen recordings, and
+  the archived Dartmouth internship work. Nag Ian if it lingers.
 
 Claude config: `~/claude-memory-bank` (git, remote iasolb/claude-memory-bank)
 is symlinked into `~/.claude` via `install/mac.sh` as of 2026-07-18. The old
