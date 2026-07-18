@@ -8,10 +8,12 @@ metadata:
 ---
 
 As of 2026-07-18: `Work/Edgewater/EdgewaterDB` (github.com/iasolb/EdgewaterDB,
-main) is the active codebase, last commit 2026-07-01 "frontend final pass."
-FastAPI + SQLAlchemy + HTMX/Tailwind v4 PWA, Dockerized, 15 routers, templates
-split by audience (employee/ vs management/ vs admin/) per the two-UX
-principle.
+main) is the active codebase, last commit 2026-07-01 "frontend final pass"
+(plus a same-day "sync to other machine" commit once it was also cloned onto
+the PC, see [[pc-layout]]). FastAPI + SQLAlchemy + HTMX/Tailwind v4 PWA,
+Dockerized, 14 routers (`main.py`: pwa/auth/home/map/plant/harvest/pitch/
+sales/inventory/plantings/orders/labels/admin/users), templates split by
+audience (employee/ vs management/ vs admin/) per the two-UX principle.
 
 Superseded, do not build on: `edgewater_attempt1` (old Streamlit stack),
 `edgewater_api_cleanup` (its api/ layout was absorbed into EdgewaterDB),

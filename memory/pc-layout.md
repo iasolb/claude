@@ -10,10 +10,12 @@ Profiled 2026-07-18 (first real session on this machine). Home dir is
 
 - `mf/work/tallpoppies/FinancialEdgeConnector` — live repo (`.git`, `.venv`,
   `.env` all present). See [[financialedge-brain-state]].
-- `mf/work/edgewater` — empty as of this session. Ian is about to sync
-  Edgewater (`EdgewaterDB` on the Mac, see [[edgewater-state]]) onto this
-  machine and work on it here too. Check whether it's populated before
-  assuming this is still empty.
+- `mf/work/edgewater/EdgewaterDB` — synced from the Mac later this same
+  session (`git log` shows a "sync to other machine." commit on top of
+  "frontend final pass"), on `main`, working tree clean, matches origin.
+  See [[edgewater-state]] for the app itself. Neither `.env` (correctly
+  gitignored) nor a `.venv` exist yet on this machine, both need setting up
+  before it'll actually run here.
 - `mf/personal/projects/code` — only a `leet/` folder (LeetCode practice
   scripts) so far. FRED_Loader/Census_Loader/ResearchFramework/
   SolbergMainframe (see [[research-tools-state]], [[solbergmainframe-state]])
