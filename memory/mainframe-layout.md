@@ -23,9 +23,10 @@ superseded code zipped to `backups/superseded-code-2026-07.zip`):
   Dataview is in the superseded-code zip. See [[financialedge-brain-state]].
 - `SAMPLE CORE (Refurbished)/` and `Music/`: Ableton production material,
   stays on this machine, see [[mac-ableton-production]].
-- `_transfer_to_pc/` (~12G): staged for shipment to the PC's big drive, then
-  deletion here: mp3dump beat-pack zips, 2025-03-05 screen recordings, and
-  the archived Dartmouth internship work. Nag Ian if it lingers.
+- Offload complete 2026-07-18: mp3dump, the 2025-03-05 screen recordings,
+  the Dartmouth archive, and the superseded-code zip all live on the PC at
+  `D:\backups\` now (byte-verified, see [[pc-ssh-access]]). The Mac's
+  `_transfer_to_pc/` and `backups/` dirs were deleted after verification.
 
 Claude config: `~/claude-memory-bank` (git, remote iasolb/claude-memory-bank)
 is symlinked into `~/.claude` via `install/mac.sh` as of 2026-07-18. The old
