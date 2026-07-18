@@ -26,10 +26,16 @@ General PC cleanup done this session: removed stale/duplicate installers and
 zips from Downloads, removed Postman (installer + leftover home-dir folder,
 per the no-Postman rule), moved Assetto Corsa mod archives from Desktop into
 `Documents/Assetto Corsa Archives`, deleted a redundant
-`FinancialEdgeConnector.zip` that duplicated the live repo. Per
-[[mainframe-layout]], this machine (bigger drive) is also the intended
-landing spot for the Mac's `_transfer_to_pc` staging folder — not yet
-received here as of this session.
+`FinancialEdgeConnector.zip` that duplicated the live repo.
+
+This machine has a `D:\` drive (bigger than the Mac's), used as an archive
+target. `D:\backups\` now holds the Mac's offloaded material (mp3dump,
+Dartmouth internship archive, Ableton screen recordings, superseded-code
+zip), transferred 2026-07-18 via Windows OpenSSH Server running on this
+machine, see [[pc-ssh-access]]. `D:\backups\iphone\` also exists there,
+predates this transfer, unrelated. Ian also wants to build out an SSH
+tooling project on this machine specifically, see [[ssh-tooling-project]]
+for the (currently thin) details.
 
 **Project-key gotcha (fixed 2026-07-18):** `install/windows.ps1` originally
 derived the memory-sync project key from `$env:USERPROFILE`
