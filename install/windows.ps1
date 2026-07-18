@@ -6,28 +6,52 @@
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $claudeDir = Join-Path $env:USERPROFILE ".claude"
 
+# Preflight: creating symlinks needs admin rights or Developer Mode on
+# Windows. Test in a throwaway location BEFORE touching any real target, so
+# a run with insufficient privilege fails loudly up front instead of
+# removing existing config and then failing to replace it.
+$preflightTarget = Join-Path $env:TEMP "claude-memory-bank-symlink-test-$(Get-Random)"
+try {
+    New-Item -ItemType SymbolicLink -Path $preflightTarget -Target $repoRoot -ErrorAction Stop | Out-Null
+    Remove-Item $preflightTarget -Force
+} catch {
+    Write-Host "Cannot create symlinks: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "Nothing has been touched. Either:" -ForegroundColor Red
+    Write-Host "  - Enable Developer Mode (Settings > Privacy & Security > For Developers), then re-run normally, or" -ForegroundColor Red
+    Write-Host "  - Re-run this script from an elevated (Run as Administrator) PowerShell." -ForegroundColor Red
+    exit 1
+}
+
 $items = @("CLAUDE.md", "settings.json", "commands", "agents", "rules", "hooks")
 
-foreach ($item in $items) {
-    $source = Join-Path $repoRoot $item
-    $target = Join-Path $claudeDir $item
-
+function Replace-WithSymlink($target, $source, $label) {
     if (Test-Path $target) {
         $isSymlink = (Get-Item $target -Force).LinkType -eq "SymbolicLink"
         if ($isSymlink) {
-            Remove-Item $target -Force
+            try {
+                Remove-Item $target -Force -ErrorAction Stop
+            } catch {
+                Write-Host "FAILED to remove existing symlink at $label : $($_.Exception.Message)" -ForegroundColor Red
+                return
+            }
         } else {
             Move-Item $target "$target.bak" -Force
-            Write-Host "Backed up existing $item to $item.bak"
+            Write-Host "Backed up existing $label to $label.bak"
         }
     }
 
     try {
-        New-Item -ItemType SymbolicLink -Path $target -Target $source -Force -ErrorAction Stop | Out-Null
-        Write-Host "Linked $item"
+        New-Item -ItemType SymbolicLink -Path $target -Target $source -ErrorAction Stop | Out-Null
+        Write-Host "Linked $label"
     } catch {
-        Write-Host "FAILED to link $item : $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "FAILED to link $label : $($_.Exception.Message)" -ForegroundColor Red
     }
+}
+
+foreach ($item in $items) {
+    $source = Join-Path $repoRoot $item
+    $target = Join-Path $claudeDir $item
+    Replace-WithSymlink $target $source $item
 }
 
 # Cross-machine session memory: link the current project's memory dir to the
@@ -43,18 +67,4 @@ $projectKey = (Get-Location).Path -replace '[:\\/]', '-'
 $memoryTarget = Join-Path $claudeDir "projects\$projectKey\memory"
 
 New-Item -ItemType Directory -Path (Split-Path -Parent $memoryTarget) -Force | Out-Null
-if (Test-Path $memoryTarget) {
-    $isSymlink = (Get-Item $memoryTarget -Force).LinkType -eq "SymbolicLink"
-    if ($isSymlink) {
-        Remove-Item $memoryTarget -Force
-    } else {
-        Move-Item $memoryTarget "$memoryTarget.bak" -Force
-        Write-Host "Backed up existing memory dir to memory.bak"
-    }
-}
-try {
-    New-Item -ItemType SymbolicLink -Path $memoryTarget -Target $memorySource -Force -ErrorAction Stop | Out-Null
-    Write-Host "Linked memory"
-} catch {
-    Write-Host "FAILED to link memory : $($_.Exception.Message)" -ForegroundColor Red
-}
+Replace-WithSymlink $memoryTarget $memorySource "memory"
