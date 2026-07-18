@@ -19,6 +19,11 @@ repo-scoping as a rule you're trusting yourself to honor, not something
 prompt for any `git commit` you attempt outside that repo since no blanket
 allow was added either.
 
+Always `git pull` before committing in this repo: Ian works on the Mac and
+this PC concurrently and both push to the same remote, so check for and
+carefully resolve merge conflicts rather than assuming a clean fast-forward
+(his instruction, 2026-07-18).
+
 Everything else is a normal judgment call, not blanket-forbidden: `git status`,
 `git diff`, `git log`, `gh pr view`, `gh pr list` etc. are always fine
 unprompted. Branch create/delete, reset, add, stash, or other cleanup of a
