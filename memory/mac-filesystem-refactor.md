@@ -26,11 +26,19 @@ rockyou.txt.gz, an mdbviewer license file, survey.db, census/GIS data) and
 `D:\backups\mac-staging-2026-07\` on the PC (byte-verified, local copies
 deleted), per the new standing rule [[staging-goes-to-pc-backups]].
 
-Still local, deferred to a later pass:
-- `Music Production/_to-sort/` (~1100 audio files + sound-kit zips),
-  deliberately kept on the Ableton machine for sorting into the library,
-- possible renaming of "Project Files College Computer" (kept as-is to
-  avoid confusing Ableton).
+`_to-sort` sorting pass: DONE 2026-07-19 evening, Ian asked Claude to run
+it (see [[mac-ableton-production]] for the taxonomy guidance that came out
+of it). ~580 loose files classified by filename into the SAMPLE CORE
+taxonomy (Beats/ got per-@handle folders), 10 kit zips unpacked
+SOLSTICE-style, song rips got a new top-level `Music Production/Song Rips/`.
+The zips were then offloaded to `D:\backups\mac-staging-2026-07\
+unpacked-kit-zips\` (byte-verified, local copies deleted). What remains in
+`_to-sort/` is only `_needs-listen/` (~280 files: producer tags, ReelAudio
+files, kit-root strays, Ian's own bounces), which needs ears, not
+filenames. Move log at `~/claude/session/outputs/to-sort-moves-log.tsv`.
+
+Still deferred: possible renaming of "Project Files College Computer"
+(kept as-is to avoid confusing Ableton).
 
 Caveat flagged to Ian: Ableton will likely need sample paths relinked /
 browser folders re-added since SAMPLE CORE, Music, and the project folders
