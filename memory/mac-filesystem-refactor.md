@@ -1,22 +1,33 @@
 ---
 name: mac-filesystem-refactor
-description: Next Mac project as of 2026-07-19, a full filesystem reorganization; not yet planned
-metadata:
+description: "Mac filesystem refactor executed 2026-07-19; Desktop empty, Documents restructured, ~48G destroyed; staging folders await a later sorting pass"
+metadata: 
+  node_type: memory
   type: project
+  originSessionId: 3278a134-e273-43ad-b299-630a044fa2bc
 ---
 
-Declared 2026-07-19, right after the memory-bank migration / machine-sync /
-Xcode-purge session wrapped: Ian wants a full refactor of the MacBook's
-filesystem, which he describes as "extremely unorganized for a long time."
-Not yet scoped or planned, the conversation about shape and approach hasn't
-happened.
+Executed 2026-07-19 (planned and run in one session). Final state:
 
-Known starting points when it does: code already lives under
-`~/Desktop/MAINFRAME` (see [[mainframe-layout]], reorganized 2026-07-18 but
-only the code side), `~/claude` is the Claude workspace, SAMPLE CORE and
-Music are untouchable (see [[mac-ableton-production]]), and bulk archive
-offload to the PC's `D:\backups\` via machine-sync is a proven pattern (see
-[[pc-ssh-access]], [[ssh-tooling-project]]). Likely candidates for the
-actual mess: Desktop outside MAINFRAME, Downloads, Documents, home dir
-clutter. Expect a planning-mode conversation first (his planning-mode rule),
-delegating filesystem survey work to subagents to protect context.
+- `~/Desktop`: completely empty, deliberately. Don't put things back there.
+- `~/Documents`: MAINFRAME (code/school/work/personal) + Music Production
+  (all audio) + app-managed folders only. See [[mainframe-layout]].
+- `~/Downloads`, `~/Movies`: emptied. `~/Pictures/Screenshots/` created,
+  holds ~50 swept images.
+- Destroyed permanently (~48G, Ian chose rm over D: offload or Trash,
+  "they're all cooked and old"): all installers (58), School-001.zip,
+  Year 3.zip, TravelTimes_2026 (folder + zips), the 11G pre-refurbish
+  SAMPLE CORE zip, ~/Movies screen recordings (18), tmp/lock/metadata junk,
+  Postman leftovers (zip + app, per the no-Postman rule).
+
+Deferred to a later pass (not forgotten, staged by design):
+- `Music Production/_to-sort/` (~1100 audio files + sound-kit zips),
+- `MAINFRAME/School/_downloads-sorted/` (~340 docs/data/code, includes
+  rockyou.txt.gz, an mdbviewer license file, survey.db, census/GIS data),
+- `~/Pictures/Screenshots/`,
+- possible future restructuring inside those staging folders and renaming
+  "Project Files College Computer" (kept as-is to avoid confusing Ableton).
+
+Caveat flagged to Ian: Ableton will likely need sample paths relinked /
+browser folders re-added since SAMPLE CORE, Music, and the project folders
+all moved.
