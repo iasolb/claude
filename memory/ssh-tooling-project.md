@@ -38,7 +38,7 @@ State as of 2026-07-19 (evening, Mac session):
   in the Mac's `~/.ssh/authorized_keys`, and the PC's `~/.ssh/config`
   `Host mac` placeholder was fixed to `Ians-MacBook-Pro.local` (done
   remotely over ssh). Remaining: Ian turns on Remote Login on the Mac
-  (System Settings > General > Sharing — needs admin, sshd confirmed not
+  (System Settings > General > Sharing, needs admin; sshd confirmed not
   listening). Then test `ssh mac` from the PC.
 - Python 3.13.14 installed on the PC via winget 2026-07-19 (Ian's choice),
   user PATH puts it ahead of the Store stubs in any new terminal. csv-utf8
