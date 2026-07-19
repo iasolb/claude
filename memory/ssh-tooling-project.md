@@ -9,7 +9,8 @@ metadata:
 
 Resolved 2026-07-19: the "proper pipeline for filing things between systems"
 became **machine-sync**, built this session inside the myToolBox monorepo at
-`~/claude/myToolBox` on the PC (git repo, initial commit drafted; the mystery
+`~/claude/myToolBox` on the PC (git repo, committed and pushed by Ian
+2026-07-19; the mystery
 "ssh tooling system" turned out to be his work `workbench-sync` utility,
 kept locally at `myToolBox/workbench-sync-master` and gitignored as
 Wayfair-derived reference).
