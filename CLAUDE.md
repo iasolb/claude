@@ -87,6 +87,7 @@ Standing rules live one-per-topic in `rules/`. Imported here so they're always
 loaded, not just discoverable.
 
 @rules/git-github.md
+@rules/session-dirs.md
 @rules/style.md
 @rules/documentation.md
 @rules/dev-practices.md

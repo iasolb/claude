@@ -7,8 +7,12 @@ if [[ "$(uname)" != "Darwin" ]]; then
     exit 0
 fi
 
-REPO="$HOME/claude-memory-bank"
-[[ -d "$REPO/.git" ]] || exit 0
+# The repo has moved before; check known locations, newest first.
+REPO=""
+for c in "$HOME/claude/claude-memory-bank" "$HOME/claude-memory-bank"; do
+    [[ -d "$c/.git" ]] && { REPO="$c"; break; }
+done
+[[ -n "$REPO" ]] || exit 0
 
 cd "$REPO" || exit 0
 git add -A

@@ -23,6 +23,17 @@ machines.
   memory directory under `~/.claude/projects/` to this folder, so memories
   written on one machine reach the other through git.
 
+## Branch workflow
+
+Each machine lives permanently on its own branch (`windows` on the PC, `mac`
+on the MacBook) so concurrent sessions never fight over one branch. A
+SessionStart hook (`hooks/session-start-sync-*`) runs doctor checks (memory
+symlink health, stale repo paths) and then fetches and merges the other
+machine's branch, so memory converges at the start of every session. Claude
+has full git autonomy in this repo only (merge, resolve conflicts, commit,
+push), via scoped allow rules in `settings.json`. Legacy `master` is dormant;
+the hooks merge it during the transition and nothing should commit to it.
+
 ## Install
 Run the installer for your machine from `install/`:
 - macOS/Linux: `install/mac.sh`
