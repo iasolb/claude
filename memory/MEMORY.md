@@ -1,5 +1,7 @@
 # Memory index
 
+- **INBOX (temporary): [inbox/mac-checklist.md](../inbox/mac-checklist.md), pushed from the PC 2026-07-19 for the next Mac session: DHCP reservation answers, workbench-sync purge, toolbox pull. Work through it, then delete it and this line.**
+
 - [MAINFRAME layout](mainframe-layout.md): Documents/MAINFRAME (code) + Documents/Music Production (audio) on the MacBook; memory-bank symlink setup
 - [PC layout](pc-layout.md): projects under Documents/mf, Claude workspace at ~/claude, project-key and ssh-shadowing gotchas documented inside
 - [Memory-bank ownership](memory-bank-ownership.md): claude-memory-bank is Claude's repo (commit AND push since 2026-07-19), all others are Ian's
