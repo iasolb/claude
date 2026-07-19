@@ -48,6 +48,12 @@ Windows shadows native OpenSSH in PowerShell on this machine and its ssh
 cannot resolve .local names; machine-sync pins
 `C:\Windows\System32\OpenSSH\ssh.exe` for that reason.
 
+**WSL exists on this PC** (discovered 2026-07-19): user `ian`, hostname
+DESKTOP-8G5H7LF. It has its own ssh stack and config, separate from the
+Windows one, and WSL2's NAT DNS cannot resolve .local names. For ssh from
+inside WSL, use `ssh.exe mac` (the Windows client runs fine from WSL and
+uses the Windows config/resolver); do not duplicate config into WSL.
+
 **Project-key gotcha (fixed 2026-07-18):** `install/windows.ps1` originally
 derived the memory-sync project key from `$env:USERPROFILE`
 (`C--Users-ians0`), but this session's actual Claude Code project key was
