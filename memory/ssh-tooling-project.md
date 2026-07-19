@@ -41,7 +41,8 @@ State as of 2026-07-19 (evening, Mac session):
   checklist passed from the PC: dir pull with ignore filtering, single-file
   pull, both claude variants, pushes to new/existing destinations, --csv
   conversion verified byte-exact. Hardening that came out of it (all in
-  machine-sync, commit staged for Ian):
+  machine-sync, committed and pushed by Ian as e2cde40, confirmed in the
+  Mac clone 2026-07-19 evening):
   - `Host mac` pins IP 10.0.0.9, NOT the .local name: Windows mDNS
     resolution is intermittent (works maybe half the time). If transfers
     fail, the Mac's DHCP lease drifted; durable fix is a router reservation.

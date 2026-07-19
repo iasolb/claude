@@ -40,8 +40,10 @@ already deleted. Find and delete every Mac copy:
 find ~ -maxdepth 6 -iname "*workbench*" -not -path "*/Library/*" 2>/dev/null
 ```
 
-- Copies found at: ____________
-- Deleted: [ ] done
+- Copies found at: none (find over ~ maxdepth 6 + mdfind, 2026-07-19
+  evening; only MySQL Workbench artifacts, unrelated)
+- Deleted: [x] done (nothing to delete, already recorded in
+  ssh-tooling-project)
 
 ## 5. Toolbox pull (Claude-runnable)
 
@@ -52,7 +54,8 @@ git -C ~/claude/myToolBox pull
 Brings the PC's E2E hardening commit (ssh -n probes, unreachable-peer
 handling, confirm fail-closed) into the Mac clone.
 
-- [ ] done
+- [x] done (already up to date, e2cde40 "fixed gotchas." present, so Ian
+  committed and pushed the hardening from the PC)
 
 ## 6. Wrap-up (Claude-runnable)
 
