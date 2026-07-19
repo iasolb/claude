@@ -68,7 +68,11 @@ State as of 2026-07-19 (evening, Mac session):
     and purged Xcode.app plus all of ~/Library/Developer (~8G freed, he
     does no Xcode/iOS dev). Verified after: shims resolve through CLT
     (Apple Git 2.50.1, python3 3.9.6, exit 0), popup gone. CLT (2.9G)
-    stays, do not suggest removing it. Retest push --csv from the PC.
+    stays, do not suggest removing it. Retested from the PC 2026-07-19
+    after the fix: push.mac --csv now converts ON the Mac (cp1252 fixture
+    landed byte-exact utf-8, detected as the equivalent cp1250 by the
+    pyenv env's charset-normalizer). Every machine-sync path is now
+    verified live in both directions, nothing pending.
 - Python 3.13.14 installed on the PC via winget 2026-07-19 (Ian's choice),
   user PATH puts it ahead of the Store stubs in any new terminal. csv-utf8
   verified end-to-end on it (cp1252/utf-16/utf-8-sig fixtures converted,
