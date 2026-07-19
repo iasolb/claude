@@ -57,14 +57,19 @@ State as of 2026-07-19 (evening, Mac session):
     now get pyenv 3.12.7 (verified with a clean-env `zsh -c` simulation,
     including the `python3 -` stdin-streaming form --csv uses). Real cause
     was NOT CLT damage (`xcode-select --install` says already installed):
-    `xcode-select -p` points at full Xcode.app, and that Xcode is stale
-    relative to macOS 25.6, its CoreDevice framework fails to dlopen
-    (_XPCTypeBool missing from the OS Mercury framework), so the
-    /usr/bin/python3 shim dies. Interactive shells never saw it because
-    .zshrc puts pyenv first. If Ian wants /usr/bin/python3 itself fixed:
-    update Xcode from the App Store, or if Xcode is unused,
-    `sudo xcode-select -s /Library/Developer/CommandLineTools` (CLT's own
-    python3 is 3.9.6 and runs fine). Retest push --csv from the PC.
+    `xcode-select -p` pointed at full Xcode.app, whose xcodebuild crashes
+    on a framework mismatch (CoreDevice expects _XPCTypeBool, missing from
+    the OS Mercury framework; Xcode 26.6 matches macOS 26.6 but the Mac is
+    on a beta seed, 25G5057c). Every /usr/bin shim (git AND python3) died
+    through it, and each hit fired the "install developer tools" popup Ian
+    kept seeing. Interactive shells never saw it (Homebrew git 2.55.0 and
+    pyenv python win in PATH). Fix given to Ian 2026-07-19: switch the dev
+    dir to CLT (`sudo xcode-select -s /Library/Developer/CommandLineTools`,
+    verified via DEVELOPER_DIR simulation: Apple Git 2.50.1, python3
+    3.9.6), then purge Xcode.app (4.0G) plus
+    ~/Library/Developer/{CoreSimulator,Xcode,XCPGDevices,XCTestDevices}
+    (4.1G), Ian does no Xcode/iOS dev. CLT (2.9G) stays. Retest push --csv
+    from the PC.
 - Python 3.13.14 installed on the PC via winget 2026-07-19 (Ian's choice),
   user PATH puts it ahead of the Store stubs in any new terminal. csv-utf8
   verified end-to-end on it (cp1252/utf-16/utf-8-sig fixtures converted,
