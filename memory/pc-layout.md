@@ -1,8 +1,10 @@
 ---
 name: pc-layout
-description: Layout of Ian's Windows PC, profiled 2026-07-18; also documents a project-key gotcha specific to this machine
-metadata:
+description: "Layout of Ian's Windows PC, profiled 2026-07-18; also documents a project-key gotcha specific to this machine"
+metadata: 
+  node_type: memory
   type: project
+  originSessionId: 3278a134-e273-43ad-b299-630a044fa2bc
 ---
 
 Profiled 2026-07-18 (first real session on this machine). Home dir is
@@ -35,7 +37,10 @@ target. `D:\backups\` now holds the Mac's offloaded material (mp3dump,
 Dartmouth internship archive, Ableton screen recordings, superseded-code
 zip), transferred 2026-07-18 via Windows OpenSSH Server running on this
 machine, see [[pc-ssh-access]]. `D:\backups\iphone\` also exists there,
-predates this transfer, unrelated. The SSH tooling wish became machine-sync,
+predates this transfer, unrelated. `D:\backups\mac-staging-2026-07\` added
+2026-07-19: the Mac refactor's swept Downloads docs (`downloads-sorted`,
+459 files) and images (`screenshots`, 66 files), see
+[[mac-filesystem-refactor]]. The SSH tooling wish became machine-sync,
 see [[ssh-tooling-project]].
 
 **Claude workspace (added 2026-07-19, mirrored on the Mac):** `~/claude`

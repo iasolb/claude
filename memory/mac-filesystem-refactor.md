@@ -20,13 +20,17 @@ Executed 2026-07-19 (planned and run in one session). Final state:
   SAMPLE CORE zip, ~/Movies screen recordings (18), tmp/lock/metadata junk,
   Postman leftovers (zip + app, per the no-Postman rule).
 
-Deferred to a later pass (not forgotten, staged by design):
+Staging follow-up (same day): `_downloads-sorted` (459 files, incl.
+rockyou.txt.gz, an mdbviewer license file, survey.db, census/GIS data) and
+`Pictures/Screenshots` (66 images) were shipped to
+`D:\backups\mac-staging-2026-07\` on the PC (byte-verified, local copies
+deleted), per the new standing rule [[staging-goes-to-pc-backups]].
+
+Still local, deferred to a later pass:
 - `Music Production/_to-sort/` (~1100 audio files + sound-kit zips),
-- `MAINFRAME/School/_downloads-sorted/` (~340 docs/data/code, includes
-  rockyou.txt.gz, an mdbviewer license file, survey.db, census/GIS data),
-- `~/Pictures/Screenshots/`,
-- possible future restructuring inside those staging folders and renaming
-  "Project Files College Computer" (kept as-is to avoid confusing Ableton).
+  deliberately kept on the Ableton machine for sorting into the library,
+- possible renaming of "Project Files College Computer" (kept as-is to
+  avoid confusing Ableton).
 
 Caveat flagged to Ian: Ableton will likely need sample paths relinked /
 browser folders re-added since SAMPLE CORE, Music, and the project folders
