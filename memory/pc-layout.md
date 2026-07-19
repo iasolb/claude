@@ -35,9 +35,18 @@ target. `D:\backups\` now holds the Mac's offloaded material (mp3dump,
 Dartmouth internship archive, Ableton screen recordings, superseded-code
 zip), transferred 2026-07-18 via Windows OpenSSH Server running on this
 machine, see [[pc-ssh-access]]. `D:\backups\iphone\` also exists there,
-predates this transfer, unrelated. Ian also wants to build out an SSH
-tooling project on this machine specifically, see [[ssh-tooling-project]]
-for the (currently thin) details.
+predates this transfer, unrelated. The SSH tooling wish became machine-sync,
+see [[ssh-tooling-project]].
+
+**Claude workspace (added 2026-07-19, mirrored on the Mac):** `~/claude`
+holds `claude-memory-bank` (moved from `~/claude-memory-bank`), `myToolBox`
+(git monorepo: machine-sync, csv-utf8, StayinAlive; NOT under Documents/mf),
+and `session/{context,working,outputs}` (conventions in
+rules/session-dirs.md). Python 3.13.14 installed via winget 2026-07-19;
+user PATH puts it ahead of the Microsoft Store stubs in new shells. Git for
+Windows shadows native OpenSSH in PowerShell on this machine and its ssh
+cannot resolve .local names; machine-sync pins
+`C:\Windows\System32\OpenSSH\ssh.exe` for that reason.
 
 **Project-key gotcha (fixed 2026-07-18):** `install/windows.ps1` originally
 derived the memory-sync project key from `$env:USERPROFILE`

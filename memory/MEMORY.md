@@ -1,7 +1,7 @@
 # Memory index
 
 - [MAINFRAME layout](mainframe-layout.md): where all code lives on the MacBook; memory-bank symlink setup
-- [PC layout](pc-layout.md): Windows machine profiled 2026-07-18, project layout under Documents/mf, cwd-based project-key gotcha fixed in windows.ps1
+- [PC layout](pc-layout.md): projects under Documents/mf, Claude workspace at ~/claude, project-key and ssh-shadowing gotchas documented inside
 - [Memory-bank ownership](memory-bank-ownership.md): claude-memory-bank is Claude's repo (commit AND push since 2026-07-19), all others are Ian's
 - [Memory-bank branch workflow](memory-bank-branch-workflow.md): per-machine branches windows/mac, hook-merged each session; both machines migrated 2026-07-19
 - [Edgewater state](edgewater-state.md): EdgewaterDB is live; next phase is the stock-ledger inventory redesign; Passwords.csv is fake dev data, deliberate
