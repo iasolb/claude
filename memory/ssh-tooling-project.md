@@ -52,10 +52,19 @@ State as of 2026-07-19 (evening, Mac session):
     treat ssh exit 255 as "peer unreachable, abort" rather than "false".
   - Push confirm fails closed ($null from Read-Host at stdin EOF bypassed
     -notmatch; the work reference tool has this same latent bug).
-  - The Mac's non-interactive `python3` is a BROKEN xcode-select shim
-    (dlopen error, Xcode CLT damage; interactive shells get a real one).
-    push --csv to the Mac therefore skips gracefully. Ian may want to fix
-    CLT on the Mac (`xcode-select --install`) to light that path up.
+  - The Mac non-interactive python3 problem: FIXED 2026-07-19 (Mac session)
+    via `~/.zshenv` prepending pyenv shims to PATH, so ssh-invoked commands
+    now get pyenv 3.12.7 (verified with a clean-env `zsh -c` simulation,
+    including the `python3 -` stdin-streaming form --csv uses). Real cause
+    was NOT CLT damage (`xcode-select --install` says already installed):
+    `xcode-select -p` points at full Xcode.app, and that Xcode is stale
+    relative to macOS 25.6, its CoreDevice framework fails to dlopen
+    (_XPCTypeBool missing from the OS Mercury framework), so the
+    /usr/bin/python3 shim dies. Interactive shells never saw it because
+    .zshrc puts pyenv first. If Ian wants /usr/bin/python3 itself fixed:
+    update Xcode from the App Store, or if Xcode is unused,
+    `sudo xcode-select -s /Library/Developer/CommandLineTools` (CLT's own
+    python3 is 3.9.6 and runs fine). Retest push --csv from the PC.
 - Python 3.13.14 installed on the PC via winget 2026-07-19 (Ian's choice),
   user PATH puts it ahead of the Store stubs in any new terminal. csv-utf8
   verified end-to-end on it (cp1252/utf-16/utf-8-sig fixtures converted,
