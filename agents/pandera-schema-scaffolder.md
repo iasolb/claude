@@ -55,11 +55,11 @@ class OrdersSchema(pa.DataFrameModel):
 ## Turning input into fields
 
 You'll typically be given one of:
-- **A sample pandas DataFrame or `.dtypes` output** — map each column's
+- **A sample pandas DataFrame or `.dtypes` output**: map each column's
   observed dtype directly (`int64` -> `Series[int]`, `float64` ->
   `Series[float]`, `object`/`string` -> `Series[str]`, `datetime64[ns]` ->
   `Series[pa.dtypes.Timestamp]`, `bool` -> `Series[bool]`).
-- **A BigQuery `information_schema.columns` listing** — map BQ types:
+- **A BigQuery `information_schema.columns` listing**: map BQ types:
   `STRING`->`str`, `INT64`->`int`, `FLOAT64`->`float`, `BOOL`->`bool`,
   `TIMESTAMP`/`DATETIME`->`pa.dtypes.Timestamp`, `DATE`->`datetime.date`,
   `NUMERIC`/`BIGNUMERIC`->`float` (flag the precision tradeoff rather than
