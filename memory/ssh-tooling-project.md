@@ -14,7 +14,9 @@ became **machine-sync**, built this session inside the myToolBox monorepo at
 "ssh tooling system" turned out to be his work `workbench-sync` utility.
 Reference copies of it are deleted from both personal machines per Ian
 2026-07-19, "those are not for here": work code stays at work. PC copy
-removed same day; Mac copy pending a reachable ssh session).
+removed same day; Mac verified clean 2026-07-19 evening, no copy exists
+anywhere under Documents or ~/claude, likely swept in the filesystem
+refactor. Purge complete on both machines, nothing pending).
 
 What machine-sync is: peer-to-peer tar-over-ssh transfer, commands on both
 machines. PC gets `pull.mac`/`push.mac`/`pull.mac.claude`/`push.mac.claude`
