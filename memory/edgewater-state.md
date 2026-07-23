@@ -26,6 +26,15 @@ questions) is the active forward plan; `docs/frontend-design.md` is the
 design system (Component system v2, 2026-07-01). Obsidian vault notes are
 mostly historical.
 
+2026-07-22: the PC is now in Boston and becomes the primary Edgewater dev
+machine; the Mac shifts to a productivity/personal role. PC clone was already
+current (same "sync to other machine." head). Not-in-git items identified for
+the handoff: `.env` (10 dev keys), `source/Edgewater Master.xlsx` (legacy
+master spreadsheet, gitignored), `.claude/settings.local.json`. Dev DB
+re-seeds itself from tracked SQL/CSVs on a fresh `edgewater_db_data` volume,
+so app-entered Mac data is disposable unless Ian says otherwise. Also fixed
+machine-sync's stale `LOCAL_ROOT` (Desktop -> Documents/MAINFRAME) this day.
+
 `database/datasource/Passwords.csv` is tracked on purpose: the credentials
 in it are fake dev-seed data, the repo is private, and Ian wants it tracked
 for convenience during development (confirmed 2026-07-18). Don't re-flag it.

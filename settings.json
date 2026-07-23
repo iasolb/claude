@@ -19,7 +19,19 @@
     ],
     "allow": [
       "Bash(git -C ~/claude/claude-memory-bank:*)",
-      "Bash(git -C ~/claude-memory-bank:*)"
+      "Bash(git -C ~/claude-memory-bank:*)",
+      "Bash(curl *)",
+      "Bash(docker compose logs *)",
+      "Bash(docker compose ps *)",
+      "Bash(docker compose ps)",
+      "Bash(docker info)",
+      "Bash(npm run build:css)",
+      "Bash(source .venv/bin/activate)",
+      "mcp__Claude_Preview__preview_list",
+      "mcp__mcp-registry__search_mcp_registry",
+      "mcp__mcp-registry__list_connectors",
+      "mcp__claude-in-chrome__list_connected_browsers",
+      "mcp__visualize__read_me"
     ]
   },
   "hooks": {

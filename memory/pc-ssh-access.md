@@ -6,9 +6,17 @@ metadata:
 ---
 
 Both directions work as of 2026-07-19: `ssh pc` from the Mac, `ssh mac`
-from the PC (HostName pinned to 10.0.0.9, Windows mDNS resolution of .local
-names is unreliable; PC keypair comment `ians0-pc`). Details and gotchas in
-[[ssh-tooling-project]].
+from the PC (HostName pinned to 10.0.0.225, Windows mDNS resolution of
+.local names is unreliable; PC keypair comment `ians0-pc`). Details and
+gotchas in [[ssh-tooling-project]].
+
+DHCP reservations done by Ian 2026-07-19 (Xfinity router): Mac reserved at
+10.0.0.225 (survived a forced lease renewal), PC (DESKTOP-8G5H7LF, wired)
+at 10.0.0.186. Private Wi-Fi Address is off/fixed: en0 uses the hardware
+MAC a4:cf:99:75:04:37, so the reservation is stable. The PC's `Host mac`
+HostName was updated 10.0.0.9 -> 10.0.0.225 over ssh the same day and
+PC->Mac verified live. IPs should no longer drift; if ssh ever fails
+anyway, check the reservation survived a router reboot/reset.
 
 Set up 2026-07-18: Windows OpenSSH Server runs on the PC (see [[pc-layout]]),
 and the Mac's `~/.ssh/id_ed25519` key is installed in the PC's

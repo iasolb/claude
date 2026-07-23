@@ -32,6 +32,14 @@ etc.) stayed intact under Drums/Kits/. Ableton project folders moved out to
 `MAINFRAME/Music/Ableton Projects/`. ~4,950 AppleDouble/metadata junk files
 deleted; .asd kept deliberately (they save Ableton re-analysis).
 
+Sorting guidance from Ian (2026-07-19, when he asked Claude to sort
+`_to-sort` into the library): the Beats/Melodic-Loops boundary is fuzzy and
+he does not care much, don't agonize over it; longer producer-tagged mp3s
+(@handle, BPM, key in the name) are often full loops rather than finished
+beats. Song rips live in their own top-level `Music Production/Song Rips/`,
+not in Beats/. Kit zips get unpacked and split by sound type with the pack
+name kept (SOLSTICE precedent), not stored intact.
+
 Gotchas learned: several folder names carried invisible private-use Unicode
 characters (U+F028/U+F022, Windows-interop artifacts) that break exact-path
 commands, resolve with globs or find. Old projects opened after the move

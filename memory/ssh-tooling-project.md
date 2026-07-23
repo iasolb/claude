@@ -14,7 +14,9 @@ became **machine-sync**, built this session inside the myToolBox monorepo at
 "ssh tooling system" turned out to be his work `workbench-sync` utility.
 Reference copies of it are deleted from both personal machines per Ian
 2026-07-19, "those are not for here": work code stays at work. PC copy
-removed same day; Mac copy pending a reachable ssh session).
+removed same day; Mac verified clean 2026-07-19 evening, no copy exists
+anywhere under Documents or ~/claude, likely swept in the filesystem
+refactor. Purge complete on both machines, nothing pending).
 
 What machine-sync is: peer-to-peer tar-over-ssh transfer, commands on both
 machines. PC gets `pull.mac`/`push.mac`/`pull.mac.claude`/`push.mac.claude`
@@ -39,11 +41,13 @@ State as of 2026-07-19 (evening, Mac session):
   checklist passed from the PC: dir pull with ignore filtering, single-file
   pull, both claude variants, pushes to new/existing destinations, --csv
   conversion verified byte-exact. Hardening that came out of it (all in
-  machine-sync, commit staged for Ian):
-  - `Host mac` pins IP 10.0.0.9, NOT the .local name: Windows mDNS
-    resolution is intermittent (works maybe half the time). If transfers
-    fail, the Mac's DHCP lease drifted; durable fix is a router reservation.
-    `StrictHostKeyChecking accept-new` is set.
+  machine-sync, committed and pushed by Ian as e2cde40, confirmed in the
+  Mac clone 2026-07-19 evening):
+  - `Host mac` pins the Mac's IP, NOT the .local name: Windows mDNS
+    resolution is intermittent (works maybe half the time).
+    `StrictHostKeyChecking accept-new` is set. Router reservations landed
+    2026-07-19 (Mac 10.0.0.225, PC 10.0.0.186, see [[pc-ssh-access]]) and
+    the pin was updated from 10.0.0.9, so drift should be over.
   - PC PowerShell resolves ssh AND tar to Git for Windows' builds (PATH
     shadowing); scripts pin System32 natives explicitly. Git's ssh cannot
     resolve .local; Git's GNU tar cannot take `C:\` in `-C`.
