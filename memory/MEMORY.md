@@ -15,3 +15,5 @@
 - [PC SSH access](pc-ssh-access.md): key-authed `ssh pc` (ians0@10.0.0.186), tar-over-ssh transfer patterns, D:\backups holds the Mac offload
 - [SSH tooling project](ssh-tooling-project.md): machine-sync fully operational, every path live-tested both directions 2026-07-19; gotcha list documented inside
 - [FinancialEdge + BRAIN state](financialedge-brain-state.md): both deployed (Oracle VM June 2026, HF Spaces May 2026)
+- [Gmail cleanup project](gmail-cleanup-project.md): recon done 2026-07-22 — 4 purge tiers (~4,500 msgs) + keep-list mapped, awaiting Ian's tier approval
+- [PC MCP tooling](pc-mcp-tooling.md): context7 + edgewater-mysql + gmail MCP all verified working (gmail via Ian's own GCP OAuth, tokens in ~/.gmail-mcp); github MCP + gh CLI await auth; open items: Gmail bulk-cleanup project, Workspace MCP for Calendar/Drive
