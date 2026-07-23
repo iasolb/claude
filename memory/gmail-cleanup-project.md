@@ -1,6 +1,6 @@
 ---
 name: gmail-cleanup-project
-description: "Gmail bulk-cleanup: full dry-run recon done 2026-07-22, findings + agreed purge tiers; awaiting/tracking Ian's approvals"
+description: "Gmail bulk-cleanup: executed 2026-07-22 (2,005 trashed, label tree + filters built); next up is the unarchived-inbox pass"
 metadata: 
   node_type: memory
   type: project

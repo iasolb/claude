@@ -1,6 +1,6 @@
 ---
 name: pc-mcp-tooling
-description: "MCP/tooling buildout on the PC started 2026-07-22: what's installed, what's pending auth, and the Google-tooling direction Ian wants next"
+description: "MCP/tooling buildout started 2026-07-22 (PC, gmail now on Mac too): what's installed, what's pending auth, and the Google-tooling direction Ian wants next"
 metadata: 
   node_type: memory
   type: project
@@ -38,6 +38,13 @@ Buildout on the PC, 2026-07-22 (all user-scope in `~/.claude.json`):
   gmail.settings.basic (labels/trash/filters yes, no permanent delete).
   Northeastern mail is Microsoft-tenant; M365 connector needs tenant admin
   consent (untested), Chrome-driving Outlook web is the fallback.
+  **Also set up on the Mac 2026-07-23** (same GCP OAuth client, fresh consent
+  flow since the PC was off): keys + token in `~/.gmail-mcp/` on the Mac,
+  registered user-scope via `claude mcp add --scope user gmail -- npx
+  @gongrzhe/server-gmail-autoauth-mcp`, health-checked ✓. The client-secret
+  JSON Ian downloaded still sits on the Mac Desktop
+  (`client_secret_2_4614...json`), safe to delete since a copy lives in
+  `~/.gmail-mcp/gcp-oauth.keys.json`.
 - **Gmail cleanup project (open):** Ian wants a bulk spam purge + labeling +
   filters in the personal Gmail. Agreed ground rules: dry-run counts/samples
   first, Ian approves categories, trash not permanent delete. A consolidated
